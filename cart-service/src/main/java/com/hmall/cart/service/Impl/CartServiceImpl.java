@@ -1,4 +1,4 @@
-package com.hmall.cart.service.impl;
+package com.hmall.cart.service.Impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -16,10 +16,8 @@ import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestTemplate;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -39,12 +37,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
-     private final RestTemplate restTemplate;
-
-     private final DiscoveryClient discoveryClient;
-
+//    private final RestTemplate restTemplate;
+//    private final DiscoveryClient discoveryClient;
+////    private final IItemService itemService;
     private final ItemClient itemClient;
-
     private final CartProperties cartProperties;
 
     @Override
@@ -53,7 +49,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         Long userId = UserContext.getUser();
 
         // 2.判断是否已经存在
-        if(checkItemExists(cartFormDTO.getItemId(), userId)){
+        if (checkItemExists(cartFormDTO.getItemId(), userId)) {
             // 2.1.存在，则更新数量
             baseMapper.updateNum(cartFormDTO.getItemId(), userId);
             return;
@@ -73,14 +69,17 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     @Override
     public List<CartVO> queryMyCarts() {
         // 1.查询我的购物车列表
-        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, UserContext.getUser()).list();
+        List<Cart> carts = lambdaQuery().eq(Cart::getUserId,  UserContext.getUser()).list();
         if (CollUtils.isEmpty(carts)) {
             return CollUtils.emptyList();
         }
+
         // 2.转换VO
         List<CartVO> vos = BeanUtils.copyList(carts, CartVO.class);
+
         // 3.处理VO中的商品信息
         handleCartItems(vos);
+
         // 4.返回
         return vos;
     }
@@ -88,32 +87,31 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
         // 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
-//        // 2.查询商品
-//        // 2.1.根据服务名称获取服务的实例列表
+       // 2.查询商品
+////        List<ItemDTO> items = itemService.queryItemByIds(itemIds);
+//        //2.1根据服务名称获取服务的实例列表
 //        List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
-//        if (CollUtil.isEmpty(instances)) {
+//        if (CollUtil.isEmpty(instances)){
 //            return;
 //        }
-//        // 2.2.手写负载均衡，从实例列表中挑选一个实例
 //        ServiceInstance instance = instances.get(RandomUtil.randomInt(instances.size()));
-//        // 2.3.利用RestTemplate发起http请求，得到http的响应
+//
+//
 //        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(
-//                instance.getUri() + "/items?ids={ids}",
+//                instance.getUri()+"/items?ids={ids}",
 //                HttpMethod.GET,
 //                null,
 //                new ParameterizedTypeReference<List<ItemDTO>>() {
 //                },
 //                Map.of("ids", CollUtil.join(itemIds, ","))
 //        );
-//        // 2.3.解析响应
-//        if(!response.getStatusCode().is2xxSuccessful()){
-//            // 查询失败，直接结束
+//        if (!response.getStatusCode().is2xxSuccessful()) {
 //            return;
 //        }
+//     // 2.2. 解析响应
 //        List<ItemDTO> items = response.getBody();
 
         List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
-
         if (CollUtils.isEmpty(items)) {
             return;
         }
@@ -132,7 +130,6 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     }
 
     @Override
-    @Transactional
     public void removeByItemIds(Collection<Long> itemIds) {
         // 1.构建删除条件，userId和itemId
         QueryWrapper<Cart> queryWrapper = new QueryWrapper<Cart>();
@@ -144,18 +141,17 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     }
 
     private void checkCartsFull(Long userId) {
-        int count = Math.toIntExact(lambdaQuery().eq(Cart::getUserId, userId).count());
-        if (count >= cartProperties.getMaxItems()) {
-            throw new BizIllegalException(
-                    StrUtil.format("用户购物车课程不能超过{}", cartProperties.getMaxItems()));
+        long count = lambdaQuery().eq(Cart::getUserId, userId).count();
+        if (count >= cartProperties.getMaxItems() ) {
+            throw new BizIllegalException(StrUtil.format("用户购物车课程不能超过{}", cartProperties.getMaxItems()));
         }
     }
 
     private boolean checkItemExists(Long itemId, Long userId) {
-        int count = Math.toIntExact(lambdaQuery()
+        long count = lambdaQuery()
                 .eq(Cart::getUserId, userId)
                 .eq(Cart::getItemId, itemId)
-                .count());
+                .count();
         return count > 0;
     }
 }
