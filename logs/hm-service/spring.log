@@ -1,0 +1,34 @@
+15:07:00:475  INFO 6164 --- [main] com.hmall.cart.CartApplication           : Starting CartApplication using Java 11.0.26 on ipad with PID 6164 (D:\zhuomian\资料\hmall\cart-service\target\classes started by 13351 in D:\zhuomian\资料\hmall)
+15:07:00:479 DEBUG 6164 --- [main] com.hmall.cart.CartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+15:07:00:480  INFO 6164 --- [main] com.hmall.cart.CartApplication           : The following 1 profile is active: "dev"
+15:07:01:263  INFO 6164 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7d7b7fa1-8ba5-3a84-bb86-c7de4daaf6ed
+15:07:01:546  INFO 6164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+15:07:01:553  INFO 6164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+15:07:01:554  INFO 6164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+15:07:01:695  INFO 6164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+15:07:01:696  INFO 6164 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1183 ms
+15:07:03:495  INFO 6164 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+15:07:05:272  INFO 6164 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+15:07:05:390  INFO 6164 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'item-service' URL not provided. Will try picking an instance via load-balancing.
+15:07:07:502  WARN 6164 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration': Unsatisfied dependency expressed through field 'autoServiceRegistration'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistration' available: expected single matching bean but found 2: nacosAutoServiceRegistration,eurekaAutoServiceRegistration
+15:07:07:506  INFO 6164 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+15:07:07:516  INFO 6164 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:07:07:530 ERROR 6164 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field autoServiceRegistration in org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration required a single bean, but 2 were found:
+	- nacosAutoServiceRegistration: defined by method 'nacosAutoServiceRegistration' in class path resource [com/alibaba/cloud/nacos/registry/NacosServiceRegistryAutoConfiguration.class]
+	- eurekaAutoServiceRegistration: defined by method 'eurekaAutoServiceRegistration' in class path resource [org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+

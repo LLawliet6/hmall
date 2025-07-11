@@ -1,0 +1,50 @@
+14:33:35:493  INFO 14208 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 11.0.26 on ipad with PID 14208 (D:\zhuomian\资料\hmall\item-service1\target\classes started by 13351 in D:\zhuomian\资料\hmall)
+14:33:35:497 DEBUG 14208 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+14:33:35:497  INFO 14208 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+14:33:36:357  INFO 14208 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c414497b-08ec-3e5c-a252-0da90406e5b8
+14:33:36:625  INFO 14208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+14:33:36:633  INFO 14208 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:33:36:633  INFO 14208 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+14:33:36:763  INFO 14208 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:33:36:763  INFO 14208 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
+14:33:40:918  INFO 14208 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:33:40:935  INFO 14208 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+14:33:42:591  INFO 14208 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:33:42:704  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 6fdd61e9-7b3a-4165-b562-aa3e822e792a
+14:33:42:749  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 22 ms to scan 1 urls, producing 3 keys and 6 values 
+14:33:42:773  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 4 keys and 9 values 
+14:33:42:781  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 3 keys and 10 values 
+14:33:42:784  WARN 14208 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+14:33:42:792  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 1 keys and 5 values 
+14:33:42:815  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 20 ms to scan 1 urls, producing 1 keys and 7 values 
+14:33:42:823  INFO 14208 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 2 keys and 8 values 
+14:33:42:825  WARN 14208 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+14:33:42:826  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] RpcClient init label, labels = {module=naming, source=sdk}
+14:33:42:828  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:33:42:828  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:33:42:829  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:33:42:831  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Try to connect to server on start up, server: {serverIp = '192.168.46.135', server main port = 8848}
+14:33:45:142  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Success to connect to server [192.168.46.135:8848] on start up, connectionId = 1744965300100_192.168.46.1_22065
+14:33:45:143  INFO 14208 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Notify connected event to listeners.
+14:33:45:144  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:33:45:145  INFO 14208 --- [main] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$903/0x00000008405c3840
+14:33:45:201  INFO 14208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+14:33:45:211  INFO 14208 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service1 192.168.46.1:8083 register finished
+14:33:45:638  INFO 14208 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Receive server push request, request = NotifySubscriberRequest, requestId = 52
+14:33:45:652  INFO 14208 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [6fdd61e9-7b3a-4165-b562-aa3e822e792a] Ack server push request, request = NotifySubscriberRequest, requestId = 52
+14:33:46:875  INFO 14208 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:33:46:876  INFO 14208 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+14:33:46:879  INFO 14208 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+14:33:46:905  INFO 14208 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+14:33:47:032  INFO 14208 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 13.698 seconds (JVM running for 14.824)
+14:39:52:723  WARN 14208 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+14:39:52:722  WARN 14208 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+14:39:52:723  WARN 14208 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+14:39:52:723  WARN 14208 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+14:39:53:226  INFO 14208 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+14:39:53:229  INFO 14208 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+14:39:53:554  INFO 14208 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+14:39:53:554  INFO 14208 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@33d185f1[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+14:39:53:554  INFO 14208 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1744965300100_192.168.46.1_22065
+14:39:53:555  INFO 14208 --- [nacos-grpc-client-executor-106] c.a.n.c.remote.client.grpc.GrpcClient    : [1744965300100_192.168.46.1_22065]Ignore complete event,isRunning:false,isAbandon=false
+14:39:53:558  INFO 14208 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1ee838f0[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 107]
