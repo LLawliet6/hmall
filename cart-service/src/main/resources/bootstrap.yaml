@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cart-service
+  profiles:
+    active: local
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.40.134:8848
+
+      # ← 这里是 Config 客户端真正生效的部分，要和 discovery 平级
+      config:
+        server-addr: 192.168.40.134:8848    # 一定要写这行，告诉 Config Client 去哪里拉
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+          - data-id: shared-log.yaml
+          - data-id: shared-swagger.yaml
+          - data-id: shared-mq.yaml

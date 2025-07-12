@@ -1,6 +1,18 @@
 server:
   port: 8085
+hm:
+  db:
+    database: hm-trade
+  swagger:
+    title: 交易服务接口文档
+    package: com.hmall.trade.controller
 spring:
+  rabbitmq:
+    host: 192.168.40.134 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /hmall # 虚拟主机
+    username: hmall # 用户名
+    password: 123 # 密码
   application:
     name: trade-service # 服务名称
   profiles:
@@ -12,7 +24,9 @@ spring:
     password: ${hm.db.pw}
   cloud:
     nacos:
-      server-addr: 192.168.40.134 # nacos地址
+      discovery:
+        server-addr: 192.168.40.134:8848
+
 mybatis-plus:
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
@@ -42,3 +56,7 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.hmall.trade.controller
+
+
+
+
