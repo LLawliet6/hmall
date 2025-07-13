@@ -1,12 +1,14 @@
 package com.hmall.trade.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmall.api.client.CartClient;
 import com.hmall.api.client.ItemClient;
 import com.hmall.api.dto.ItemDTO;
 import com.hmall.api.dto.OrderDetailDTO;
 import com.hmall.common.exception.BadRequestException;
+import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.UserContext;
 import com.hmall.trade.constants.MQConstants;
 import com.hmall.trade.domain.dto.CartClearMessageDTO;
@@ -77,7 +79,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         // 2.保存订单详情
         List<OrderDetail> details = buildDetails(order.getId(), items, itemNumMap);
-        detailService.saveBatch(details);
+        detailService.saveBatch( details);
 
         // 3.扣减库存
         try {
@@ -111,7 +113,6 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
                 });
         return order.getId();
 
-
     }
 
     @Override
@@ -124,8 +125,40 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    @Transactional
     public void cancelOrder(Long orderId) {
-//TODO
+        //TODO 取消订单和增加库存
+        com.hmall.trade.domain.po.Order order = new com.hmall.trade.domain.po.Order();
+        order.setId(orderId);
+        order.setStatus(5);
+        updateById(order);
+        // 3. 查出订单明细，准备回滚库存
+        List<OrderDetail> details = detailService.list(
+                new QueryWrapper<OrderDetail>().eq("order_id", orderId)
+        );
+        if (!details.isEmpty()) {
+            // 转成 DTO 调用库存服务
+            List<OrderDetailDTO> rollbackList = details.stream()
+                    .map(d -> {
+                        OrderDetailDTO dto = new OrderDetailDTO();
+                        dto.setItemId(d.getItemId());
+                        dto.setNum(d.getNum());
+                        return dto;
+                    })
+                    .collect(Collectors.toList());
+
+            // 4. 调用库存服务批量回滚
+            try {
+                itemClient.rollbackStock(rollbackList);
+            } catch (Exception ex) {
+                // 库存回滚失败，抛异常让事务回滚或在外层做补偿
+                throw new BizIllegalException("回滚库存失败，订单取消未完成", ex);
+            }
+        }
+
+        // 5. （可选）发送取消通知、日志记录
+        log.info("订单 {} 已取消，且已回滚 {} 件商品库存", orderId, details.size());
+
     }
 
     private List<OrderDetail> buildDetails(Long orderId, List<ItemDTO> items, Map<Long, Integer> numMap) {

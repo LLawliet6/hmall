@@ -21,4 +21,7 @@ public interface ItemClient {
     @PutMapping("items/stock/deduct")
     void deductStock(@RequestBody List<OrderDetailDTO> items);
 
+
+    @PutMapping("items/stock/rollback")
+    void rollbackStock(@RequestBody List<OrderDetailDTO> items);
 }

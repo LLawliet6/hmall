@@ -16,5 +16,4 @@ import java.util.List;
  */
 public interface IOrderDetailService extends IService<OrderDetail> {
 
-    void saveBatch(List<com.hmall.trade.domain.po.OrderDetail> details);
 }

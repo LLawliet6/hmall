@@ -815,3 +815,277 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: Client not connected,
 18:32:24:091  WARN 18456 --- [http-nio-8081-exec-7] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@301728f] Transaction not enabled
 18:32:24:091 DEBUG 18456 --- [http-nio-8081-exec-7] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
 18:32:24:092 DEBUG 18456 --- [http-nio-8081-exec-7] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 1(Integer), 1713453(Long)
+19:02:30:471  WARN 18456 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+19:02:30:472  WARN 18456 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+19:02:30:473  WARN 18456 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+19:02:30:474  WARN 18456 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+19:02:31:482  INFO 18456 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+19:02:31:485  INFO 18456 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+19:02:31:820  INFO 18456 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+19:02:31:821  INFO 18456 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@59a943f0[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+19:02:31:821  INFO 18456 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1752400386236_192.168.40.1_57109
+19:02:31:826  INFO 18456 --- [nacos-grpc-client-executor-877] c.a.n.c.remote.client.grpc.GrpcClient    : [1752400386236_192.168.40.1_57109]Ignore complete event,isRunning:false,isAbandon=false
+19:02:31:835  INFO 18456 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@47715eb5[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 878]
+19:02:31:846  INFO 18456 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+19:02:31:865  INFO 18456 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:08:34:724  INFO 8844 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 11.0.27 on 蓝缡 with PID 8844 (C:\Users\18460\Desktop\springcloud\hmall\item-service\target\classes started by 18460 in C:\Users\18460\Desktop\springcloud\hmall-master)
+22:08:34:731 DEBUG 8844 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:08:34:733  INFO 8844 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "local"
+22:08:37:324  INFO 8844 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b147cbe6-959e-3c84-bcce-dd20784f41f5
+22:08:38:120  INFO 8844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+22:08:38:138  INFO 8844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:08:38:139  INFO 8844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:08:38:445  INFO 8844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:08:38:446  INFO 8844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3619 ms
+22:08:45:438  INFO 8844 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:08:45:496  INFO 8844 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:08:49:442  INFO 8844 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:08:49:715  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd
+22:08:49:778  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 43 ms to scan 1 urls, producing 3 keys and 6 values 
+22:08:49:805  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 4 keys and 9 values 
+22:08:49:817  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 9 ms to scan 1 urls, producing 3 keys and 10 values 
+22:08:49:822  WARN 8844 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:08:49:832  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 5 values 
+22:08:49:843  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 7 values 
+22:08:49:856  INFO 8844 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 2 keys and 8 values 
+22:08:49:862  WARN 8844 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:08:49:865  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] RpcClient init label, labels = {module=naming, source=sdk}
+22:08:49:869  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:08:49:869  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:08:49:870  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:08:49:874  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Try to connect to server on start up, server: {serverIp = '192.168.40.134', server main port = 8848}
+22:08:53:662  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Success to connect to server [192.168.40.134:8848] on start up, connectionId = 1752415792319_192.168.40.1_51334
+22:08:53:663  INFO 8844 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Notify connected event to listeners.
+22:08:53:664  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:08:53:665  INFO 8844 --- [main] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1026/0x0000000840684c40
+22:08:53:735  INFO 8844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+22:08:53:747  INFO 8844 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.42.1:8081 register finished
+22:08:54:289  INFO 8844 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Receive server push request, request = NotifySubscriberRequest, requestId = 48
+22:08:54:296  INFO 8844 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [a2e52c9b-452d-4ac0-b3fe-bfa773cfaedd] Ack server push request, request = NotifySubscriberRequest, requestId = 48
+22:08:57:076  INFO 8844 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:08:57:077  INFO 8844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:08:57:080  INFO 8844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:08:57:112  INFO 8844 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:08:57:264  INFO 8844 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 25.441 seconds (JVM running for 26.997)
+22:09:40:651  INFO 8844 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:09:40:651  INFO 8844 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+22:09:40:655  INFO 8844 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+22:09:40:791  INFO 8844 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+22:09:41:055  INFO 8844 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+22:09:41:062 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:09:41:086 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:09:41:111 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:09:41:740 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:09:41:741 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:09:41:747 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:09:43:927 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:09:43:928 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:09:43:933 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:09:46:463 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:09:46:464 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:09:46:496 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:09:46:507 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+22:09:46:507 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long)
+22:09:46:543 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:12:11:651 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:12:11:652 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long), 1533902(Long)
+22:12:11:656 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:12:47:072 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+22:12:47:073 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1533902(Long)
+22:12:47:077 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
+22:12:47:226  WARN 8844 --- [http-nio-8081-exec-9] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41fb6257] Transaction not enabled
+22:12:47:227 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:12:47:228 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 1(Integer), 1533902(Long)
+22:16:26:885 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:16:26:886 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:16:26:896 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:16:29:077 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:16:29:079 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:16:29:094 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:16:29:098 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+22:16:29:098 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long)
+22:16:29:138 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:16:31:136 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:16:31:137 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 1713453(Long), 2120808(Long)
+22:16:31:140 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:16:36:076 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+22:16:36:077 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1713453(Long)
+22:16:36:079 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
+22:16:36:205  WARN 8844 --- [http-nio-8081-exec-6] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a90ab7] Transaction not enabled
+22:16:36:207 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:16:36:208 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 1(Integer), 1713453(Long)
+22:25:35:879 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:25:35:880 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:25:35:884 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:25:38:998 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:25:39:000 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:25:39:003 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:25:40:762 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:25:40:763 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:25:40:767 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:25:43:791 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:25:43:792 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:25:43:811 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:25:43:814 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+22:25:43:815 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long)
+22:25:43:862 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:25:49:108 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:25:49:108 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 1713453(Long), 2120808(Long)
+22:25:49:112 DEBUG 8844 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:25:59:783 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:25:59:784 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:25:59:797 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:25:59:800 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?,?
+22:25:59:801 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long), 20(Long)
+22:25:59:828 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:26:06:417 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:26:06:418 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:26:06:439 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:26:06:442 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?,?
+22:26:06:443 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 40(Long), 20(Long)
+22:26:06:481 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:26:09:830 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? , ? )
+22:26:09:831 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 1713453(Long), 2120808(Long), 1323738(Long)
+22:26:09:835 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 4
+22:26:11:930 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? , ? )
+22:26:11:931 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 1713453(Long), 2120808(Long), 1323738(Long)
+22:26:11:933 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 4
+22:26:20:511 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:26:20:511 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1713453(Long), 1323738(Long)
+22:26:20:513 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:26:20:680  WARN 8844 --- [http-nio-8081-exec-10] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6873fc3a] Transaction not enabled
+22:26:20:680 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:26:20:681 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 2(Integer), 1323738(Long)
+22:26:20:681 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 1(Integer), 1713453(Long)
+22:26:30:839 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:26:30:840 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 2(Integer), 1323738(Long)
+22:26:30:841 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 1(Integer), 1713453(Long)
+22:28:01:072 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:28:01:074 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:28:01:079 DEBUG 8844 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:28:03:782 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:28:03:782 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:28:03:785 DEBUG 8844 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:28:05:506 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:28:05:507 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:28:05:511 DEBUG 8844 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:28:07:218 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:28:07:219 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:28:07:236 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:28:07:239 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+22:28:07:239 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long)
+22:28:07:260 DEBUG 8844 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:28:24:824 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:28:24:825 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long), 1323738(Long)
+22:28:24:828 DEBUG 8844 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:28:27:377 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:28:27:378 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long), 1323738(Long)
+22:28:27:379 DEBUG 8844 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:28:30:880 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+22:28:30:880 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1323738(Long)
+22:28:30:882 DEBUG 8844 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
+22:28:30:898  WARN 8844 --- [http-nio-8081-exec-1] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@db3c4d8] Transaction not enabled
+22:28:30:898 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:28:30:898 DEBUG 8844 --- [http-nio-8081-exec-1] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 2(Integer), 1323738(Long)
+22:28:40:940 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:28:40:940 DEBUG 8844 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 2(Integer), 1323738(Long)
+22:45:43:978  WARN 8844 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:45:43:978  WARN 8844 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:45:43:979  WARN 8844 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:45:43:980  WARN 8844 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:45:44:549  INFO 8844 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:45:44:553  INFO 8844 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:45:44:880  INFO 8844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:45:44:880  INFO 8844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@51891cc2[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:45:44:880  INFO 8844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1752415792319_192.168.40.1_51334
+22:45:44:882  INFO 8844 --- [nacos-grpc-client-executor-463] c.a.n.c.remote.client.grpc.GrpcClient    : [1752415792319_192.168.40.1_51334]Ignore complete event,isRunning:false,isAbandon=false
+22:45:44:884  INFO 8844 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@6d32ffbd[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 464]
+22:45:44:890  INFO 8844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:45:44:911  INFO 8844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:45:54:092  INFO 22976 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 11.0.27 on 蓝缡 with PID 22976 (C:\Users\18460\Desktop\springcloud\hmall\item-service\target\classes started by 18460 in C:\Users\18460\Desktop\springcloud\hmall-master)
+22:45:54:095 DEBUG 22976 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:45:54:095  INFO 22976 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "local"
+22:45:55:313  INFO 22976 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b147cbe6-959e-3c84-bcce-dd20784f41f5
+22:45:55:735  INFO 22976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+22:45:55:747  INFO 22976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:45:55:747  INFO 22976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:45:55:935  INFO 22976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:45:55:936  INFO 22976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1793 ms
+22:46:00:227  INFO 22976 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:46:00:259  INFO 22976 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:46:02:265  INFO 22976 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:46:02:521  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 8d70c3f0-1288-4e72-b57c-66afa5b5eb2a
+22:46:02:583  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 41 ms to scan 1 urls, producing 3 keys and 6 values 
+22:46:02:611  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 12 ms to scan 1 urls, producing 4 keys and 9 values 
+22:46:02:623  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 3 keys and 10 values 
+22:46:02:626  WARN 22976 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:46:02:634  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 1 keys and 5 values 
+22:46:02:645  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 7 values 
+22:46:02:656  INFO 22976 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 2 keys and 8 values 
+22:46:02:659  WARN 22976 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:46:02:660  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] RpcClient init label, labels = {module=naming, source=sdk}
+22:46:02:662  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:46:02:663  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:46:02:664  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:46:02:665  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Try to connect to server on start up, server: {serverIp = '192.168.40.134', server main port = 8848}
+22:46:05:298  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Success to connect to server [192.168.40.134:8848] on start up, connectionId = 1752418024005_192.168.40.1_53076
+22:46:05:300  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:46:05:299  INFO 22976 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Notify connected event to listeners.
+22:46:05:301  INFO 22976 --- [main] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1025/0x00000008406ae440
+22:46:05:359  INFO 22976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+22:46:05:370  INFO 22976 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.42.1:8081 register finished
+22:46:05:931  INFO 22976 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Receive server push request, request = NotifySubscriberRequest, requestId = 73
+22:46:05:935  INFO 22976 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [8d70c3f0-1288-4e72-b57c-66afa5b5eb2a] Ack server push request, request = NotifySubscriberRequest, requestId = 73
+22:46:07:175  INFO 22976 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+22:46:07:176  INFO 22976 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:46:07:179  INFO 22976 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:46:07:207  INFO 22976 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:46:07:350  INFO 22976 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 15.6 seconds (JVM running for 16.988)
+22:46:46:295  INFO 22976 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:46:46:295  INFO 22976 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+22:46:46:298  INFO 22976 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+22:46:46:458  INFO 22976 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+22:46:46:801  INFO 22976 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+22:46:46:814 DEBUG 22976 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:46:46:845 DEBUG 22976 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:46:46:883 DEBUG 22976 --- [http-nio-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:46:48:125 DEBUG 22976 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:46:48:126 DEBUG 22976 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:46:48:130 DEBUG 22976 --- [http-nio-8081-exec-2] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:46:50:204 DEBUG 22976 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+22:46:50:206 DEBUG 22976 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long)
+22:46:50:212 DEBUG 22976 --- [http-nio-8081-exec-3] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 2
+22:46:52:015 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM item WHERE (status = ?)
+22:46:52:016 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : ==> Parameters: 1(Integer)
+22:46:52:033 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.i.m.ItemMapper.selectPage_mpCount    : <==      Total: 1
+22:46:52:040 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+22:46:52:040 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : ==> Parameters: 1(Integer), 20(Long)
+22:46:52:065 DEBUG 22976 --- [http-nio-8081-exec-4] c.h.item.mapper.ItemMapper.selectPage    : <==      Total: 20
+22:47:06:182 DEBUG 22976 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:47:06:183 DEBUG 22976 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long), 1323738(Long)
+22:47:06:187 DEBUG 22976 --- [http-nio-8081-exec-5] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:47:10:144 DEBUG 22976 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+22:47:10:144 DEBUG 22976 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long), 2120808(Long), 1323738(Long)
+22:47:10:147 DEBUG 22976 --- [http-nio-8081-exec-7] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 3
+22:47:14:462 DEBUG 22976 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+22:47:14:462 DEBUG 22976 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1323738(Long)
+22:47:14:465 DEBUG 22976 --- [http-nio-8081-exec-6] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
+22:47:14:490  WARN 22976 --- [http-nio-8081-exec-8] c.h.item.service.Impl.ItemServiceImpl    : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62fa1f9e] Transaction not enabled
+22:47:14:491 DEBUG 22976 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.updateStock   : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+22:47:14:492 DEBUG 22976 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.updateStock   : ==> Parameters: 2(Integer), 1323738(Long)
+22:47:24:544 DEBUG 22976 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.rollbackStock    : ==>  Preparing: UPDATE item SET stock = stock + ? WHERE id = ?
+22:47:24:545 DEBUG 22976 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.rollbackStock    : ==> Parameters: 2(Integer), 1323738(Long)
+22:47:24:548 DEBUG 22976 --- [http-nio-8081-exec-9] c.h.i.mapper.ItemMapper.rollbackStock    : <==    Updates: 1
+22:47:53:248  WARN 22976 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:47:53:248  WARN 22976 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:47:53:248  WARN 22976 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:47:53:250  WARN 22976 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:47:54:378  INFO 22976 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:47:54:384  INFO 22976 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:47:54:713  INFO 22976 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:47:54:713  INFO 22976 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@2d2cdf13[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:47:54:714  INFO 22976 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1752418024005_192.168.40.1_53076
+22:47:54:717  INFO 22976 --- [nacos-grpc-client-executor-39] c.a.n.c.remote.client.grpc.GrpcClient    : [1752418024005_192.168.40.1_53076]Ignore complete event,isRunning:false,isAbandon=false
+22:47:54:723  INFO 22976 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1997b940[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 40]
+22:47:54:728  INFO 22976 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:47:54:752  INFO 22976 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

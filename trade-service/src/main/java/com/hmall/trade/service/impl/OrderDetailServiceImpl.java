@@ -20,8 +20,4 @@ import java.util.List;
 @Service
 public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper, OrderDetail> implements IOrderDetailService {
 
-    @Override
-    public void saveBatch(List<OrderDetail> details) {
-
-    }
 }

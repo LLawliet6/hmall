@@ -1,5 +1,6 @@
 package com.hmall.trade.listner;
 
+import com.hmall.api.client.ItemClient;
 import com.hmall.api.client.PayClient;
 import com.hmall.api.dto.PayOrderDTO;
 import com.hmall.trade.constants.MQConstants;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 public class DelayOrderListner {
     private final IOrderService orderService;
     private final PayClient payClient;
+
 
     @RabbitListener(
             bindings = @QueueBinding(
