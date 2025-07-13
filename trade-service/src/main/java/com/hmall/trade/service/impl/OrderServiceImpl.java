@@ -8,6 +8,8 @@ import com.hmall.api.dto.ItemDTO;
 import com.hmall.api.dto.OrderDetailDTO;
 import com.hmall.common.exception.BadRequestException;
 import com.hmall.common.utils.UserContext;
+import com.hmall.trade.constants.MQConstants;
+import com.hmall.trade.domain.dto.CartClearMessageDTO;
 import com.hmall.trade.domain.dto.OrderFormDTO;
 import com.hmall.trade.domain.po.Order;
 import com.hmall.trade.domain.po.OrderDetail;
@@ -15,6 +17,9 @@ import com.hmall.trade.mapper.OrderMapper;
 import com.hmall.trade.service.IOrderDetailService;
 import com.hmall.trade.service.IOrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +35,7 @@ import java.util.stream.Collectors;
  * 服务实现类
  * </p>
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements IOrderService {
@@ -37,6 +43,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     private final ItemClient itemClient;
     private final IOrderDetailService detailService;
     private final CartClient cartClient;
+    private final RabbitTemplate rabbitTemplate;
+
 
     @Override
     @Transactional
@@ -78,9 +86,32 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
             throw new RuntimeException("库存不足！");
         }
 
-        // 4.清理购物车商品
-        cartClient.deleteCartItemByIds(itemIds);
+        // TODO 4.清理购物车商品  改为mq
+//        cartClient.deleteCartItemByIds(itemIds);
+        CartClearMessageDTO msg = new CartClearMessageDTO();
+        msg.setUserId(UserContext.getUser());
+        msg.setItemIds(itemIds);
+        try {
+            rabbitTemplate.convertAndSend(
+                    "trade.topic",        // 交换机
+                    "order.create",       // RoutingKey
+                    msg                   // 消息体（会被序列化为 JSON）
+            );
+        } catch (AmqpException e) {
+            log.error("发送消息失败！购物车未清理,订单信息：{}", msg, e);
+        }
+        // 5.发送延迟消息
+        rabbitTemplate.convertAndSend(
+                MQConstants.DELAY_EXCHANGE_NAME,
+                MQConstants.DELAY_ROUTING_KEY,
+                order.getId(),
+                message -> {
+                    message.getMessageProperties().setDelay(10000);
+                    return message;
+                });
         return order.getId();
+
+
     }
 
     @Override
@@ -90,6 +121,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         order.setStatus(2);
         order.setPayTime(LocalDateTime.now());
         updateById(order);
+    }
+
+    @Override
+    public void cancelOrder(Long orderId) {
+//TODO
     }
 
     private List<OrderDetail> buildDetails(Long orderId, List<ItemDTO> items, Map<Long, Integer> numMap) {

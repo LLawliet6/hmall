@@ -67,11 +67,11 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         }
         // 5.修改订单状态
 //        tradeClient.markOrderPaySuccess(po.getBizOrderNo());
-        try {
-            rabbitTemplate.convertAndSend("pay.direct","pay.success", po.getBizOrderNo());
-        } catch (AmqpException e) {
-            log.error("发送消息失败！,订单id：{}", po.getBizOrderNo(),e);
-        }
+//        try {
+//            rabbitTemplate.convertAndSend("pay.direct","pay.success", po.getBizOrderNo());
+//        } catch (AmqpException e) {
+//            log.error("发送消息失败！,订单id：{}", po.getBizOrderNo(),e);
+//        }
     }
 
     public boolean markPayOrderSuccess(Long id, LocalDateTime successTime) {
@@ -83,6 +83,7 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
                 .in(PayOrder::getStatus, PayStatus.NOT_COMMIT.getValue(), PayStatus.WAIT_BUYER_PAY.getValue())
                 .update();
     }
+
 
 
     private PayOrder checkIdempotent(PayApplyDTO applyDTO) {

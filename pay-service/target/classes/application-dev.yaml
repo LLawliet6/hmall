@@ -1,4 +1,4 @@
 hm:
   db:
-    host: localhost
-    pw: 123456
+    host: mysql
+    pw: 1234
